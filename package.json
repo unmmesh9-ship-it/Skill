@@ -1,0 +1,26 @@
+{
+  "name": "skillmatrix-pro",
+  "version": "1.0.0",
+  "description": "SkillMatrix Pro - Employee Skill & Project Analytics System",
+  "private": true,
+  "scripts": {
+    "install-all": "cd server && npm install && cd ../client && npm install",
+    "dev-server": "cd server && npm run dev",
+    "dev-client": "cd client && npm run dev",
+    "build-client": "cd client && npm run build",
+    "start-server": "cd server && npm start"
+  },
+  "keywords": [
+    "skillmatrix",
+    "employee-management",
+    "skill-tracking",
+    "project-management",
+    "analytics"
+  ],
+  "author": "Senior Full Stack Architect",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/skillmatrix-pro.git"
+  }
+}
