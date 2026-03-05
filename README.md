@@ -1,405 +1,297 @@
-# SkillMatrix Pro - Employee Skill & Project Analytics System
+# 🎯 SkillMatrix Pro
 
-A production-ready full-stack web application for managing employee skills and project assignments with comprehensive analytics dashboards.
+**Employee Skill & Project Management System**
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+A comprehensive full-stack web application for managing employee skills, projects, and team analytics with a beautiful, responsive UI featuring dark/light mode support.
 
-## 🚀 Features
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-green.svg)
+![React](https://img.shields.io/badge/react-18.2.0-blue.svg)
+![PostgreSQL](https://img.shields.io/badge/postgresql-14%2B-blue.svg)
 
-### Admin Portal
-- **Dashboard Analytics**
-  - Top 20 Skills visualization
-  - Top Projects by team size
-  - Skill category distribution (Bar & Pie charts)
-  - Trending skills section
-  - Real-time statistics
+## ✨ Features
 
-- **User Management**
-  - CRUD operations for users
-  - Role-based access control
-  - Profile completion tracking
+### 👨‍💼 Admin Dashboard
+- **Real-time Analytics** - Interactive charts showing skill distribution, top skills, and project metrics
+- **User Management** - Complete CRUD operations for managing employees and administrators
+- **Skills Management** - Organize and categorize company skills library
+- **Project Management** - Create projects, assign teams, and track progress
+- **Beautiful Charts** - Bar charts, pie charts, area charts, and radar charts using Recharts
 
-- **Skill Management**
-  - Create, update, delete skills
-  - Category-based organization
-  - Proficiency level tracking (1-5)
+### 👤 Employee Portal
+- **Personal Dashboard** - View assigned projects and skill overview
+- **Skills Management** - Add, update, and rate personal skills with proficiency levels
+- **Project View** - See all assigned projects with team information
+- **Profile Management** - Update personal information and credentials
 
-- **Project Management**
-  - CRUD operations for projects
-  - Team assignment functionality
-  - Project analytics
+### 🎨 UI/UX Features
+- **Dark/Light Mode** - Full theme support with smooth transitions
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Modern UI** - Beautiful glassmorphism effects and gradient designs
+- **Interactive Components** - Clickable cards, hover effects, and smooth animations
 
-### Employee Portal
-- **Personal Dashboard**
-  - Profile completion progress bar
-  - Skills overview
-  - Projects timeline
-  - Skill growth chart
-
-- **Skill Management**
-  - Add/update personal skills
-  - Proficiency level updates
-  - Skill categorization
-
-- **Project View**
-  - Assigned projects list
-  - Project details and descriptions
-
-## 🛠️ Tech Stack
+## 🚀 Tech Stack
 
 ### Frontend
-- **React 18.2** - UI library
-- **Vite** - Build tool
-- **React Router DOM** - Routing
+- **React 18.2** - Modern UI library
+- **Vite 5.0** - Lightning-fast build tool
+- **React Router** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Beautiful chart library
 - **Axios** - HTTP client
-- **Tailwind CSS** - Styling
-- **Recharts** - Data visualization
-- **Context API** - State management
 
 ### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web framework
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
 - **PostgreSQL** - Relational database
-- **JSON Web Tokens (JWT)** - Authentication
-- **Bcrypt.js** - Password hashing
-- **Express Validator** - Input validation
+- **Sequelize** - ORM for database operations
+- **JWT** - Secure authentication
+- **bcrypt** - Password hashing
 
-## 📁 Project Structure
-
-```
-SKILLS/
-├── client/                    # Frontend React application
-│   ├── src/
-│   │   ├── components/       # Reusable components
-│   │   │   ├── AdminLayout.jsx
-│   │   │   ├── EmployeeLayout.jsx
-│   │   │   └── ProtectedRoute.jsx
-│   │   ├── context/          # Context API
-│   │   │   └── AuthContext.jsx
-│   │   ├── pages/            # Page components
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── AdminDashboard.jsx
-│   │   │   └── EmployeeDashboard.jsx
-│   │   ├── services/         # API service layer
-│   │   │   ├── api.js
-│   │   │   ├── authService.js
-│   │   │   ├── skillService.js
-│   │   │   ├── projectService.js
-│   │   │   └── userService.js
-│   │   ├── App.jsx           # Main app component
-│   │   ├── main.jsx          # Entry point
-│   │   └── index.css         # Global styles
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   └── postcss.config.js
-│
-├── server/                    # Backend Node.js application
-│   ├── config/               # Configuration files
-│   │   └── database.js       # PostgreSQL connection
-│   ├── controllers/          # Request handlers
-│   │   ├── authController.js
-│   │   ├── userController.js
-│   │   ├── skillController.js
-│   │   └── projectController.js
-│   ├── models/               # Database models
-│   │   ├── User.js
-│   │   ├── Skill.js
-│   │   └── Project.js
-│   ├── routes/               # API routes
-│   │   ├── authRoutes.js
-│   │   ├── userRoutes.js
-│   │   ├── skillRoutes.js
-│   │   └── projectRoutes.js
-│   ├── middlewares/          # Custom middlewares
-│   │   ├── auth.js           # JWT verification
-│   │   ├── errorHandler.js   # Error handling
-│   │   └── validation.js     # Input validation
-│   ├── server.js             # Entry point
-│   ├── package.json
-│   ├── .env.example
-│   └── .gitignore
-│
-├── database/                  # Database files
-│   └── schema.sql            # PostgreSQL schema
-│
-└── README.md                 # This file
-```
-
-## 🚀 Getting Started
+## 📦 Installation
 
 ### Prerequisites
-
 - Node.js (v18 or higher)
 - PostgreSQL (v14 or higher)
 - npm or yarn
 
-### Database Setup
-
-1. **Install PostgreSQL**
-   - Download and install PostgreSQL from [postgresql.org](https://www.postgresql.org/download/)
-
-2. **Create Database**
-   ```bash
-   # Login to PostgreSQL
-   psql -U postgres
-
-   # Create database
-   CREATE DATABASE skillmatrix_db;
-
-   # Exit psql
-   \q
-   ```
-
-3. **Run Schema**
-   ```bash
-   psql -U postgres -d skillmatrix_db -f database/schema.sql
-   ```
-
-### Backend Setup
-
-1. **Navigate to server directory**
-   ```bash
-   cd server
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-   ```bash
-   # Copy example env file
-   cp .env.example .env
-
-   # Edit .env file with your configuration
-   # Update DB credentials and JWT secret
-   ```
-
-4. **Start the server**
-   ```bash
-   # Development mode with auto-reload
-   npm run dev
-
-   # Production mode
-   npm start
-   ```
-
-   Server will run on `http://localhost:5000`
-
-### Frontend Setup
-
-1. **Navigate to client directory**
-   ```bash
-   cd client
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-   Application will run on `http://localhost:5173`
-
-## 🔐 Demo Credentials
-
-### Admin Account
-- **Email**: admin@skillmatrix.com
-- **Password**: password123
-
-### Employee Account
-- **Email**: john@company.com
-- **Password**: password123
-
-## 📡 API Documentation
-
-### Authentication Endpoints
-
-```
-POST   /api/auth/register    # Register new user
-POST   /api/auth/login       # Login user
-GET    /api/auth/me          # Get current user
-POST   /api/auth/logout      # Logout user
+### 1. Clone the Repository
+```bash
+git clone https://github.com/unmmesh9-ship-it/Skill.git
+cd Skill
 ```
 
-### User Endpoints (Admin Only)
+### 2. Install Dependencies
 
-```
-GET    /api/users            # Get all users
-GET    /api/users/:id        # Get user by ID
-PUT    /api/users/:id        # Update user
-DELETE /api/users/:id        # Delete user
-PUT    /api/users/profile    # Update own profile
-```
-
-### Skill Endpoints
-
-```
-GET    /api/skills                        # Get all skills
-GET    /api/skills/:id                    # Get skill by ID
-POST   /api/skills                        # Create skill (Admin)
-PUT    /api/skills/:id                    # Update skill (Admin)
-DELETE /api/skills/:id                    # Delete skill (Admin)
-GET    /api/skills/employee/my-skills     # Get employee's skills
-POST   /api/skills/employee/add           # Add skill to employee
-PUT    /api/skills/employee/:id           # Update employee skill
-DELETE /api/skills/employee/:id           # Delete employee skill
-GET    /api/skills/analytics/top          # Get top skills (Admin)
-GET    /api/skills/analytics/distribution # Get skill distribution (Admin)
-```
-
-### Project Endpoints
-
-```
-GET    /api/projects                     # Get all projects
-GET    /api/projects/:id                 # Get project by ID
-POST   /api/projects                     # Create project (Admin)
-PUT    /api/projects/:id                 # Update project (Admin)
-DELETE /api/projects/:id                 # Delete project (Admin)
-GET    /api/projects/my-projects         # Get user's projects
-GET    /api/projects/:id/team            # Get project team
-POST   /api/projects/:id/assign          # Assign user to project (Admin)
-DELETE /api/projects/:id/assign/:userId  # Remove user from project (Admin)
-GET    /api/projects/analytics/top       # Get top projects (Admin)
-```
-
-## 🎨 Color Themes
-
-### Admin Portal
-- **Primary**: Dark Blue (#1e3a8a)
-- **Secondary**: Teal (#0d9488)
-- **Accent**: Orange (#f97316)
-
-### Employee Portal
-- **Primary**: Purple (#7c3aed)
-- **Secondary**: Green (#10b981)
-- **Background**: Light Gray (#f3f4f6)
-
-## 🔒 Security Features
-
-- **Password Hashing**: Bcrypt with salt rounds
-- **JWT Authentication**: Secure token-based authentication
-- **HTTP-Only Cookies**: Protection against XSS attacks
-- **Role-Based Access Control**: Admin and employee roles
-- **Input Validation**: Express-validator for request validation
-- **SQL Injection Prevention**: Parameterized queries
-- **Error Handling**: Centralized error handler
-- **Environment Variables**: Sensitive data protection
-
-## 🗄️ Database Schema
-
-### Tables
-
-1. **users**
-   - User accounts with role-based access
-   - Stores credentials and profile information
-
-2. **skills**
-   - Master list of all available skills
-   - Categorized for organization
-
-3. **employee_skills**
-   - Junction table linking users to skills
-   - Proficiency level tracking (1-5)
-
-4. **projects**
-   - Project information and metadata
-   - Created by admin users
-
-5. **project_assignments**
-   - Junction table for project-user relationships
-   - Tracks team assignments
-
-## 🧪 Testing
-
-### Backend Testing
+**Backend:**
 ```bash
 cd server
-npm test
+npm install
 ```
 
-### Frontend Testing
+**Frontend:**
 ```bash
 cd client
-npm test
+npm install
 ```
 
-## 📦 Building for Production
+### 3. Configure Database
 
-### Frontend Build
+Create a PostgreSQL database named `skillmatrix_db`:
+```bash
+psql -U postgres
+CREATE DATABASE skillmatrix_db;
+\q
+```
+
+### 4. Setup Environment Variables
+
+Create `server/.env` file:
+```env
+PORT=5001
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_NAME=skillmatrix_db
+JWT_SECRET=your_jwt_secret_key_here
+NODE_ENV=development
+```
+
+### 5. Initialize Database
+
+Run the database setup script:
+```bash
+cd server
+node migrate-database.js
+node seed-database.js
+```
+
+### 6. Start the Application
+
+**Backend (Terminal 1):**
+```bash
+cd server
+npm start
+```
+
+**Frontend (Terminal 2):**
+```bash
+cd client
+npm run dev
+```
+
+Access the application at: **http://localhost:5173**
+
+## 🔐 Default Credentials
+
+**Admin Account:**
+- Email: `admin@skillmatrix.com`
+- Password: `password123`
+
+**Employee Account:**
+- Email: `unmesh@company.com`
+- Password: `password123`
+
+## 📊 Database Schema
+
+### Tables
+- **users** - User accounts (admin/employee)
+- **skills** - Company skills library (47 pre-loaded skills)
+- **projects** - Project information
+- **employee_skills** - User-skill relationships with proficiency levels
+- **project_assignments** - User-project assignments
+
+### Sample Data Included
+- ✅ 17 users (1 admin + 16 employees)
+- ✅ 47 skills across 13 categories
+- ✅ 9 active projects
+- ✅ 53 skill assignments
+- ✅ 17 project assignments
+
+## 📁 Project Structure
+
+```
+Skill/
+├── client/                  # Frontend React application
+│   ├── src/
+│   │   ├── components/     # Reusable components
+│   │   ├── context/        # React Context (Auth, Theme)
+│   │   ├── pages/          # Page components
+│   │   └── services/       # API services
+│   └── package.json
+├── server/                  # Backend Node.js application
+│   ├── config/             # Database configuration
+│   ├── controllers/        # Request handlers
+│   ├── middlewares/        # Custom middleware
+│   ├── models/             # Sequelize models
+│   ├── routes/             # API routes
+│   └── package.json
+├── database/               # SQL schema files
+└── README.md
+```
+
+## 🔌 API Endpoints
+
+### Authentication
+- `POST /api/auth/login` - User login
+- `POST /api/auth/register` - User registration
+- `GET /api/auth/me` - Get current user
+
+### Users (Admin Only)
+- `GET /api/users` - Get all users
+- `GET /api/users/:id` - Get user by ID
+- `POST /api/users` - Create user
+- `PUT /api/users/:id` - Update user
+- `DELETE /api/users/:id` - Delete user
+
+### Skills
+- `GET /api/skills` - Get all skills
+- `GET /api/skills/:id` - Get skill by ID
+- `POST /api/skills` - Create skill (Admin)
+- `PUT /api/skills/:id` - Update skill (Admin)
+- `DELETE /api/skills/:id` - Delete skill (Admin)
+- `GET /api/skills/analytics/top` - Get top skills
+- `GET /api/skills/analytics/distribution` - Get skill distribution
+
+### Projects
+- `GET /api/projects` - Get all projects
+- `GET /api/projects/:id` - Get project by ID
+- `POST /api/projects` - Create project (Admin)
+- `PUT /api/projects/:id` - Update project (Admin)
+- `DELETE /api/projects/:id` - Delete project (Admin)
+- `GET /api/projects/my-projects` - Get user's projects
+
+## 🎨 Features in Detail
+
+### Dark Mode
+Toggle between light and dark themes with a single click. Theme preference is saved in localStorage.
+
+### Analytics Dashboard
+- **Skill Distribution** - Bar chart showing skills by category
+- **Skill Breakdown** - Pie chart showing skill distribution percentages
+- **Skill Popularity** - Area chart showing top trending skills
+- **360° Skill Matrix** - Radar chart for category distribution
+- **Top 20 Skills** - Detailed table with rankings and proficiency
+- **Active Projects** - Project cards with team size visualization
+
+### Clickable Stats Cards
+Dashboard stat cards are interactive - click to navigate:
+- Users card → Navigate to User Management
+- Skills card → Navigate to Skills Management
+- Projects card → Navigate to Projects Management
+
+## 🔧 Development
+
+### Run in Development Mode
+
+**Backend with hot reload:**
+```bash
+cd server
+npm run dev
+```
+
+**Frontend with hot reload:**
+```bash
+cd client
+npm run dev
+```
+
+### Build for Production
+
+**Frontend:**
 ```bash
 cd client
 npm run build
 ```
 
-### Backend Production
-```bash
-cd server
-NODE_ENV=production npm start
-```
+The production build will be created in `client/dist/`
 
-## 🚀 Deployment
+## 📝 Scripts Available
 
-### Backend Deployment (Heroku Example)
-```bash
-cd server
-heroku create skillmatrix-api
-heroku addons:create heroku-postgresql:hobby-dev
-git push heroku main
-```
+### Backend (`server/`)
+- `npm start` - Start production server
+- `npm run dev` - Start development server with nodemon
 
-### Frontend Deployment (Vercel Example)
-```bash
-cd client
-vercel deploy --prod
-```
+### Frontend (`client/`)
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-## 🤝 Contributing
+## 🐛 Troubleshooting
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Database Connection Issues
+1. Verify PostgreSQL is running
+2. Check credentials in `.env` file
+3. Ensure database exists: `CREATE DATABASE skillmatrix_db;`
 
-## 📝 License
+### Port Already in Use
+- Backend (5001): `netstat -ano | findstr :5001` (Windows) or `lsof -ti:5001` (Mac/Linux)
+- Frontend (5173): `netstat -ano | findstr :5173` (Windows) or `lsof -ti:5173` (Mac/Linux)
+
+### Clear Browser Cache
+Press `Ctrl + Shift + R` (Windows) or `Cmd + Shift + R` (Mac) to hard refresh
+
+## 📄 License
 
 This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-**Senior Full Stack Architect**
+**unmmesh9-ship-it**
+- GitHub: [@unmmesh9-ship-it](https://github.com/unmmesh9-ship-it)
 
 ## 🙏 Acknowledgments
 
-- React team for the amazing framework
-- PostgreSQL for the robust database
-- Tailwind CSS for the utility-first CSS framework
+- React team for the amazing library
 - Recharts for beautiful chart components
+- Tailwind CSS for utility-first styling
+- All open-source contributors
 
 ## 📞 Support
 
-For support, email support@skillmatrix.com or open an issue in the repository.
-
-## 🔄 Version History
-
-- **1.0.0** (2026-02-20)
-  - Initial release
-  - Admin and Employee portals
-  - Complete CRUD operations
-  - Analytics dashboards
-  - JWT authentication
-  - Role-based access control
+For support, email unmmesh9@skillmatrix.com or open an issue in this repository.
 
 ---
 
-**Built with ❤️ using React, Node.js, and PostgreSQL**
+**⭐ Star this repository if you find it helpful!**
