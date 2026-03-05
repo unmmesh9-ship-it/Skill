@@ -160,8 +160,8 @@ exports.getMySkills = async (req, res, next) => {
       user_id: es.user_id,
       skill_id: es.skill_id,
       proficiency_level: es.proficiency_level,
-      years_of_experience: es.years_of_experience,
       created_at: es.created_at,
+      updated_at: es.updated_at,
       // Flatten skill data to match expected structure
       skill_name: es.skill?.name || '',
       name: es.skill?.name || '',
@@ -174,6 +174,7 @@ exports.getMySkills = async (req, res, next) => {
       data: skills
     });
   } catch (error) {
+    console.error('getMySkills error:', error);
     next(error);
   }
 };
