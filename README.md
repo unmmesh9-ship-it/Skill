@@ -9,6 +9,20 @@ A comprehensive full-stack web application for managing employee skills, project
 ![React](https://img.shields.io/badge/react-18.2.0-blue.svg)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-14%2B-blue.svg)
 
+## 📥 Import / Clone This Repository
+
+**Repository URL:** `https://github.com/unmmesh9-ship-it/Skill`
+
+| Method | Command |
+|--------|---------|
+| **HTTPS** | `git clone https://github.com/unmmesh9-ship-it/Skill.git` |
+| **SSH** | `git clone git@github.com:unmmesh9-ship-it/Skill.git` |
+| **GitHub CLI** | `gh repo clone unmmesh9-ship-it/Skill` |
+
+- 🔗 **[View on GitHub](https://github.com/unmmesh9-ship-it/Skill)**
+- 📋 **[Fork this repository](https://github.com/unmmesh9-ship-it/Skill/fork)**
+- 📦 **[Import into your GitHub account](https://github.com/new/import?import_url=https://github.com/unmmesh9-ship-it/Skill)**
+
 ## ✨ Features
 
 ### 👨‍💼 Admin Dashboard
