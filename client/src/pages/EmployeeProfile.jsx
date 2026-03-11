@@ -15,7 +15,6 @@ const EmployeeProfile = () => {
   const [error, setError] = useState('');
   const [mySkills, setMySkills] = useState([]);
   const [myProjects, setMyProjects] = useState([]);
-  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
     fetchProfileData();
@@ -115,7 +114,7 @@ const EmployeeProfile = () => {
                     {user?.role}
                   </span>
                   <span className="text-purple-100 text-sm">
-                    Member since {new Date(user?.created_at).toLocaleDateString()}
+                    Member since {user?.created_at ? new Date(user.created_at).toLocaleDateString() : 'N/A'}
                   </span>
                 </div>
               </div>

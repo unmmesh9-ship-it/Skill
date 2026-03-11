@@ -125,7 +125,7 @@ const AdminUsers = () => {
   };
 
   const handleRemoveSkill = async (skillId) => {
-    if (!confirm('Are you sure you want to remove this skill?')) return;
+    if (!window.confirm('Are you sure you want to remove this skill?')) return;
 
     try {
       await skillService.removeSkillFromEmployee(selectedUser.id, skillId);
@@ -282,7 +282,7 @@ const AdminUsers = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+              <tbody className="bg-white divide-y divide-gray-200">
                 {filteredUsers.map((user) => (
                   <tr key={user.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -385,7 +385,7 @@ const AdminUsers = () => {
       {/* Skill Management Modal */}
       {showSkillModal && selectedUser && (
         <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-colors duration-300">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-colors duration-300">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-2xl font-bold text-gray-800">
@@ -472,10 +472,10 @@ const AdminUsers = () => {
                           <div className="flex justify-between items-start mb-3">
                             <div>
                               <h5 className="font-bold text-gray-800">
-                                {employeeSkill.skill.name}
+                                {employeeSkill.skill?.name}
                               </h5>
                               <p className="text-sm text-gray-600">
-                                {employeeSkill.skill.category}
+                                {employeeSkill.skill?.category}
                               </p>
                             </div>
                             <button
@@ -526,7 +526,7 @@ const AdminUsers = () => {
       {/* Add User Modal */}
       {showAddUserModal && (
         <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-md transition-colors duration-300">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transition-colors duration-300">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-800">Add New User</h3>
               <button
